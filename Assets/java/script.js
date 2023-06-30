@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 var choiceArray= [];
 // added multiple arrays 
-var specialCharacterArray = ["!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"] ;
+var specialCharacterArray = ["!", "#", "$", "%", "&", "()", "*", "+", "-", ".", "/", ":", ";", "<", "=",">", "?", "@", "[", "_"]; 
 var lowerCaseArray = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCaseCharacterArray = [	"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numberArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -37,7 +37,15 @@ if (confirm ("would you like numbers in your password?")) {
 choiceArray = choiceArray.concat(numberArray);
 }
 
+if (choiceArray.length == 0){
+  alert("Cannot Create based selection");
+
+return false;
+}
+
+
 return true;
+
 }
 
 
@@ -67,7 +75,7 @@ function generatePassword(){
 
     password = password + choiceArray[randomLetter];
     
-  }
+  } ;
   return password;
 }
 
